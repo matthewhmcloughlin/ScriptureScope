@@ -8,7 +8,7 @@ using System.Diagnostics;
 
 namespace ScriptureTelescope
 {
-    public class Telescope
+    public class Scope
     {
         public string Path { get; set; }
         public XmlDocument BibleXml { get; set; } = new XmlDocument();
@@ -19,7 +19,7 @@ namespace ScriptureTelescope
         public int TotalVerseCount { get; set; }
 
         public string ProductVersion { get; set; }
-        public Telescope(string path)
+        public Scope(string path)
         {
             Path = path;
             BibleXml.Load(path);
@@ -33,8 +33,8 @@ namespace ScriptureTelescope
         {
             while (true)
             {
-                Console.ForegroundColor = ConsoleColor.DarkBlue;
-                Console.WriteLine($"Scripture Telescope v{ProductVersion} by Matthew H. McLoughlin");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine($"Scripture Scope v{ProductVersion} by Matthew H. McLoughlin");
                 Console.WriteLine($"NIV 1984 version");
                 Console.ResetColor();
                 Console.WriteLine();
