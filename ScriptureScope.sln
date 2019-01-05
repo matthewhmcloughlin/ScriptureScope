@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScriptureTelescope", "ScriptureTelescope\ScriptureTelescope.csproj", "{20CB93E9-BFE9-40A4-BDF9-C486DC93192B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScriptureScope", "ScriptureTelescope\ScriptureScope.csproj", "{20CB93E9-BFE9-40A4-BDF9-C486DC93192B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2298BBA1-1BC0-473A-AE88-298C4B286331}"
 	ProjectSection(SolutionItems) = preProject
