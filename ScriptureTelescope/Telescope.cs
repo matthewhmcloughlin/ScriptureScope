@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Reflection;
+using System.Diagnostics;
 
 namespace ScriptureTelescope
 {
@@ -15,22 +17,32 @@ namespace ScriptureTelescope
         public HashSet<string> HyphenatedWords { get; set; } = new HashSet<string>();
         public int TotalWordCount { get; set; }
         public int TotalVerseCount { get; set; }
+
+        public string ProductVersion { get; set; }
         public Telescope(string path)
         {
             Path = path;
             BibleXml.Load(path);
             LoadWordFrequencies();
+
+            var assembly = Assembly.GetExecutingAssembly();
+            ProductVersion = FileVersionInfo.GetVersionInfo(assembly.Location).ProductVersion;
         }
 
         public void ProcessCommands()
         {
             while (true)
             {
-                Console.WriteLine("wf = word frequency explorer");
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Console.WriteLine($"Scripture Telescope v{ProductVersion} by Matthew H. McLoughlin");
+                Console.WriteLine($"NIV 1984 version");
+                Console.ResetColor();
+                Console.WriteLine();
+                Console.WriteLine("Commands:");
                 Console.WriteLine("wl = word location explorer");
+                Console.WriteLine("wf = word frequency explorer");
                 Console.WriteLine("pf = print word frequencies");
                 Console.WriteLine("all = print all verses");
-
                 Console.WriteLine();
                 Console.Write("Enter command: ");
                 var command = Console.ReadLine().ToLowerInvariant().Trim();
@@ -39,15 +51,19 @@ namespace ScriptureTelescope
                 switch (command)
                 {
                     case "wf":
+                        Console.Clear();
                         WordFrequencyExplorer();
                         break;
                     case "wl":
+                        Console.Clear();
                         WordLocationExplorer();
                         break;
                     case "pf":
+                        Console.Clear();
                         PrintWordFrequencies();
                         break;
                     case "all":
+                        Console.Clear();
                         ReadAndPrint();
                         break;
                     default:
@@ -214,6 +230,7 @@ namespace ScriptureTelescope
         }
         private void WordFrequencyExplorer()
         {
+            
             Console.WriteLine($"Unique word count: {UniqueWords.Count:n0}");
             Console.WriteLine($"Total word count: {TotalWordCount:n0}");
             Console.WriteLine($"Total verse count: {TotalVerseCount:n0}");
