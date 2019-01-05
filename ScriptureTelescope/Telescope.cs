@@ -271,12 +271,18 @@ namespace ScriptureTelescope
                 }
 
                 int count = WordFrequencies[key];
+                
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.WriteLine($"{key} was found ({count:n0}) times in this bible.");
+                Console.ResetColor();
                 Console.WriteLine();
 
                 foreach (var location in WordLocations(key))
                 {
+                    Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine(location.ToString());
+                    Console.ResetColor();
                     Console.WriteLine(location.Text);
                     Console.WriteLine();
                 }
