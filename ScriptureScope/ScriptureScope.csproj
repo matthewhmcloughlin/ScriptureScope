@@ -3,7 +3,12 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <Version>1.0.2</Version>
+    <Version>1.1.0</Version>
+    <Company />
+    <Product>Scripture Scope</Product>
+    <RepositoryUrl></RepositoryUrl>
+    <PackageProjectUrl>https://github.com/matthewhmcloughlin/ScriptureScope/</PackageProjectUrl>
+    <Authors>Matthew H. McLoughlin</Authors>
   </PropertyGroup>
 
   <ItemGroup>
