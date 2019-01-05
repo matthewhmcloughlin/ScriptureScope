@@ -6,7 +6,7 @@ using System.Xml;
 
 namespace ScriptureTelescope
 {
-    public class BibleTelescope
+    public class Telescope
     {
         public string Path { get; set; }
         public XmlDocument BibleXml { get; set; } = new XmlDocument();
@@ -15,7 +15,7 @@ namespace ScriptureTelescope
         public HashSet<string> HyphenatedWords { get; set; } = new HashSet<string>();
         public int TotalWordCount { get; set; }
         public int TotalVerseCount { get; set; }
-        public BibleTelescope(string path)
+        public Telescope(string path)
         {
             Path = path;
             BibleXml.Load(path);
